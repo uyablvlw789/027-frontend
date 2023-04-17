@@ -1,23 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function Section({ backgroundColor, children }) {
-  useEffect(() => {}, []);
   const sliderRef = useRef();
+  const [mouseDown, setMouseDown] = useState(false, { name: "mouseDown" });
+  const [startX, setStartX] = useState(0, { name: "startX" });
+  const [scrollLeft, setScrollLeft] = useState(0, { name: "scrollLeft" });
 
-  // const classes = `bg-${backgroundColor}`;
-
-  const [mouseDown, setMouseDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  useEffect(() => {
+    document.addEventListener("mouseup", () => {
+      if (sliderRef.current) {
+        sliderRef.current.classList.remove("is-dragging");
+      }
+    });
+  }, [sliderRef]);
 
   const handleMouseDown = (e) => {
-    console.log("mouse down!");
     setMouseDown(true);
     setStartX(e.pageX - sliderRef.current.offsetLeft);
     setScrollLeft(sliderRef.current.scrollLeft);
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (e) => {
+    e.preventDefault();
     setMouseDown(false);
   };
 
@@ -26,26 +30,23 @@ export default function Section({ backgroundColor, children }) {
     if (!mouseDown) {
       return;
     }
+
     const x = e.pageX - sliderRef.current.offsetLeft;
-    console.log("x", x);
     const scroll = x - startX;
     sliderRef.current.scrollLeft = scrollLeft - scroll;
-    // setScrollLeft(scrollLeft - scroll);
-    console.log("sliderRef.current.scrollLeft", sliderRef.current.scrollLeft);
+    sliderRef.current.classList.add("is-dragging");
   };
   const handleMouseLeave = () => {
     setMouseDown(false);
   };
   return (
     <div
-      className="overflow-scroll scrollbar-hide"
+      className="mx-10 md:overflow-scroll md:scrollbar-hide"
       ref={sliderRef}
-      // scrollLeft={scrollLeft}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      // className={classes}
     >
       {children}
     </div>

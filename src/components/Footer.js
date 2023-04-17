@@ -1,97 +1,121 @@
 import logo from "../assets/logo.png";
-import { BsFacebook } from "react-icons/bs";
+import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
+import { BiChevronDown } from "react-icons/bi";
+import { BsPinterest } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className="py-6 dark:bg-slate-800 dark:text-gray-50">
-      <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
-        <div className="grid grid-cols-12">
-          {/* 左边 */}
-          <div className="pb-6 col-span-full md:pb-0 md:col-span-8">
-            <a href="./" className="flex justify-center space-x-3 md:justify-start mb-3">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full">
-                <img src={logo} alt="" />
-              </div>
-              <span className="self-center text-2xl font-semibold">027.net</span>
+    <footer className="m-10">
+      {/* Links */}
+      <div className="border-t border-b border-gray-100 p-3 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {/* column 1 */}
+          <div className="flex flex-col space-y-3">
+            <a href="/">
+              <strong>Why netlify</strong>
             </a>
-            <div className="flex">
-              <BsFacebook className="text-2xl mr-3" />
-              <BsTwitter className="text-2xl mr-3" />
-              <FaInstagram className="text-2xl mr-3" />
-              <BsLinkedin className="text-2xl mr-3" />
-              <AiOutlineMail className="text-2xl mr-3" />
-            </div>
+            <a href="/">Customers</a>
+            <a href="/">Enterprise</a>
+            <a href="/">Resourses</a>
+            <a href="/">Agency partner program</a>
+            <a href="/">Technology partner program</a>
           </div>
-          {/* 右边 */}
-          <div className="col-span-6 text-center md:text-left md:col-span-2">
-            <ul className="flex flex-col gap-3">
-              <li>
-                <a rel="noopener noreferrer" href="./" className="hover:dark:text-violet-400">
-                  关于我们
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">
-                  编辑政策
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">
-                  隐私政策
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">
-                  不要出售我的个人信息
-                </a>
-              </li>
-            </ul>
+          {/* column 2 */}
+          <div className="flex flex-col space-y-3">
+            <a href="/">
+              <strong>Products</strong>
+            </a>
+            <a href="/">Platform</a>
+            <a href="/">Netlify Build</a>
+            <a href="/">Netlify Edge</a>
+            <a href="/">Netlify CLI</a>
+            <a href="/">Pricing</a>
+            <a href="/">Addons</a>
           </div>
-          <div className="col-span-6 text-center md:text-left md:col-span-2">
-            <ul className="flex flex-col gap-3">
-              <li>
-                <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">
-                  使用条款
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">
-                  广告
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">
-                  公告
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">
-                  联系我们
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">
-                  诚招贤士
-                </a>
-              </li>
-            </ul>
+          {/* column 3 */}
+          <div className="flex flex-col space-y-3">
+            <a href="/">
+              <strong>Docs</strong>
+            </a>
+            <a href="/">Jamstack book</a>
+            <a href="/">Community</a>
+            <a href="/">Security</a>
+            <a href="/">Site speed test</a>
+            <a href="/">Remotely Interesting</a>
+            <a className="flex flex-row items-center space-x-1" href="/">
+              <span>Technologies</span> <BiChevronDown />
+            </a>
+          </div>
+          {/* column 4 */}
+          <div className="flex flex-col space-y-3">
+            <a href="/">
+              <strong>Contact us</strong>
+            </a>
+            <a href="/">Sales</a>
+            <a href="/">Support</a>
+            <a href="/">Status</a>
+            <a href="/">Forums</a>
+            <a href="/">Hire an agency</a>
+          </div>
+          {/* column 5 */}
+          <div className="flex flex-col space-y-3">
+            <a href="/">
+              <strong>Company</strong>
+            </a>
+            <a href="/">Blog</a>
+            <a href="/">About</a>
+            <a href="/">Careers</a>
+            <a href="/">Press</a>
+            <a href="/">Jamstack Fund</a>
+            <a href="/">Netlify Store</a>
+            <a href="/">Sustainability</a>
+          </div>
+          {/* column 6 */}
+          <div className="flex flex-col space-y-3">
+            <a href="/">
+              <strong>Trust</strong>
+            </a>
+            <a href="/">Trust Center</a>
+            <a href="/">Privacy</a>
+            <a href="/">Security</a>
+            <a href="/">GDPR/CCPA</a>
+            <a href="/">Abuse</a>
           </div>
         </div>
-        <div className="grid justify-center pt-6 lg:justify-between">
-          <div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
-            <span>©2023 All rights reserved</span>
-            <a rel="noopener noreferrer" href="./">
-              <span>Privacy policy</span>
-            </a>
-            <a rel="noopener noreferrer" href="./">
-              <span>Terms of service</span>
-            </a>
-          </div>
+      </div>
+      <div className="flex flex-col space-y-4 items-center">
+        {/* trade marks */}
+        <h3 className="font-semibold">&copy; 2023 027.net</h3>
+        {/* Socials */}
+        <div className="flex flex-row space-x-3">
+          <BsFacebook className="text-2xl text-blue-600" />
+          <BsTwitter className="text-2xl text-blue-300" />
+          <BsLinkedin className="text-2xl text-sky-600" />
+          <BsInstagram className="text-2xl text-red-300" />
+          <BsPinterest className="text-2xl text-red-500" />
         </div>
+        {/* Additional menu */}
+        <ul className="flex flex-col items-center space-y-3 bg-gray-50 p-3 w-full rounded-md md:flex-row md:space-y-0 md:space-x-4 md:justify-center">
+          <li className="flex flex-row items-center">
+            <span>Jamstack</span> <BiChevronDown className=" text-gray-600" />
+          </li>
+          <li className="flex flex-row items-center">
+            <span>Deployment</span> <BiChevronDown className=" text-gray-600" />
+          </li>
+          <li className="flex flex-row items-center">
+            <span>Serverless</span> <BiChevronDown className=" text-gray-600" />
+          </li>
+          <li className="flex flex-row items-center">
+            <span>Development</span> <BiChevronDown className=" text-gray-600" />
+          </li>
+          <li className="flex flex-row items-center">
+            <span>Performance</span> <BiChevronDown className=" text-gray-600" />
+          </li>
+        </ul>
       </div>
     </footer>
   );

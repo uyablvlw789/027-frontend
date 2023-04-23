@@ -18,7 +18,7 @@ function MobileNavigation() {
           {open ? <AiOutlineClose className="texl-3xl" /> : <AiOutlineMenu className="texl-3xl" />}
         </div>
       </IconContext.Provider>
-      {open && <NavLinks isMoble={true} />}
+      {open && <NavLinks isMoble={true} onClick={handleClick} />}
     </nav>
   );
 }

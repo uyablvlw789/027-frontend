@@ -14,3 +14,7 @@
 .is-dragging a {
   pointer-events: none;
 }
+
+:root {
+  scroll-behavior: smooth;
+}

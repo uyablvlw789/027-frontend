@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import Skeleton from "react-loading-skeleton";
 
 function Aside() {
-  const queryString = "http://localhost:1337/api/announcements";
+  const queryString = `${process.env.REACT_APP_API_URL}/announcements`;
   const start = 0;
   const limit = 4;
   const type = "all";

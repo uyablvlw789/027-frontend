@@ -11,7 +11,7 @@ function AnnouncementCard({ id, title, category, date, coverImg, className, comp
     compact = false;
   }
 
-  const backendBaseUrl = "http://localhost:1337";
+  const backendBaseUrl = process.env.REACT_APP_STRAPI_URL;
 
   if (!coverImg) {
     coverImg = defaultImg;

@@ -34,7 +34,7 @@ function Section1() {
 
   return (
     // Image container
-    <div style={{ height: "60vh" }} className="relative h-screen mb-24">
+    <div style={{ height: "60vh" }} className="relative md:mb-40">
       <img
         ref={imgLeftRef}
         className="w-1/3 absolute top-1/3 left-1/3 object-contain"

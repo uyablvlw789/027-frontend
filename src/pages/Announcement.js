@@ -19,7 +19,7 @@ function Announcement() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const queryString = `${process.env.REACT_APP_BASE_URL}/api/announcements`;
+  const queryString = `${process.env.REACT_APP_API_URL}/announcements`;
 
   const id = Number.parseInt(param.id);
 

@@ -35,7 +35,7 @@ function Aside() {
     contentToRender = new Array(limit).fill(0).map((_) => {
       return <Skeleton className="w-full aspect-2/1 mb-6" />;
     });
-    console.log(contentToRender);
+
     return contentToRender;
   } else {
     const { data: announcements } = query.data.data;

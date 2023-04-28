@@ -9,11 +9,10 @@ import axios from "axios";
 import React from "react";
 
 function About() {
-  console.log(process.env);
   const query = useQuery({
     queryKey: ["about"],
     queryFn: () => {
-      return axios.get(`${process.env.REACT_APP_BASE_URL}/api/abouts/1`, {
+      return axios.get(`${process.env.REACT_APP_API_URL}/about`, {
         params: {
           populate: "*",
         },
@@ -31,6 +30,7 @@ function About() {
       </div>
     );
   } else {
+    console.log(query.data.data);
     const {
       data: {
         attributes: { content },

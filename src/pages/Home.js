@@ -10,7 +10,7 @@ import emoji from "../assets/emoji.png";
 
 import templateEcommerce from "../assets/template-ecommerce.webp";
 import templateContent from "../assets/template-content.webp";
-import ArticleCard from "../components/ArticleCard";
+import LatestArticleCards from "../components/LatestArticleCards";
 
 function Home() {
   return (
@@ -19,9 +19,9 @@ function Home() {
       <Section1 />
       <HeadingCount />
       <ScrollStory />
-      <h1 className="m-10 text-5xl">我们的项目</h1>
+      <h2 className="m-6 md:m-10 text-5xl">我们的项目</h2>
       <Section>
-        <div className="flex flex-col gap-6 md:flex-row">
+        <div className="flex flex-col gap-6 md:flex-row ">
           <a target="_blank" href="https://ipshu.com" rel="noreferrer">
             <LargeCard
               backgroundImage={templateEcommerce}
@@ -48,13 +48,11 @@ function Home() {
           </a>
         </div>
       </Section>
-      <h1 className="m-10 text-5xl">最新博客</h1>
+
+      <h1 className="m-10 md:mt-20 text-5xl">最新博客</h1>
       <Section>
-        <div className="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-3 mb-3">
-          <ArticleCard backgroundImage={templateEcommerce} title="lorem" />
-          <ArticleCard backgroundImage={templateContent} title="lorem" />
-          <ArticleCard backgroundImage={templateEcommerce} title="lorem" />
-          <ArticleCard backgroundImage={templateContent} title="lorem" />
+        <div className="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-6 mb-3">
+          <LatestArticleCards />
         </div>
       </Section>
     </>

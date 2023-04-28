@@ -1,21 +1,33 @@
 import { BiLinkExternal } from "react-icons/bi";
+
 function ArticleCard({ backgroundImage, title }) {
+  const {
+    data: {
+      attributes: { url },
+    },
+  } = backgroundImage;
+  console.log(url);
   return (
     <div
-      className="w-full md:w-96 aspect-2/1 rounded-md p-4 flex-shrink-0"
+      className="w-full md:w-96 aspect-2/1 rounded-md p-4 flex-shrink-0 relative cursor-pointer overflow-hidden"
       style={{
         display: "block",
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${process.env.REACT_APP_STRAPI_URL}${url})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex h-full">
-        <div className="bottom-2 flex flex-row justify-between items-center w-full self-end">
-          <p className="text-white">{title}</p>
-          <div>
-            <BiLinkExternal className="text-white" />
-          </div>
+      <div
+        style={{
+          background: "linear-gradient(45deg, rgb(20 49 130 / 50%) 0%, rgba(37, 38, 43, 0) 100%)",
+          backdropFilter: "blur(13px) saturate(160%)",
+          color: "white",
+        }}
+        className="absolute left-0 right-0 bottom-0 p-3 flex flex-row justify-between items-center"
+      >
+        <h4 className="text-xl line-clamp-1 w-full text-left font-bold">{title}</h4>
+        <div>
+          <BiLinkExternal className="text-xl" />
         </div>
       </div>
     </div>

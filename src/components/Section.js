@@ -41,7 +41,7 @@ export default function Section({ backgroundColor, children }) {
   };
   return (
     <div
-      className="mx-10 md:overflow-scroll md:scrollbar-hide"
+      className="mx-6 md:mx-10 md:overflow-scroll md:scrollbar-hide"
       ref={sliderRef}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}

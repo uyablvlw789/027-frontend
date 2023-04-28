@@ -1,7 +1,6 @@
 import { BsArrowRightShort } from "react-icons/bs";
 
-// cfa is expected to have two properties: isButton and content
-// if isButton is true, then it will be rendered as button, otherwise it will be rendered as link with underscore
+// cfa期望具备两个属性：isButton 和 content。如果 isButton 为 true，那么它将被渲染为按钮，否则将被渲染为带下划线的链接。
 function HomeFeature({ title, subtitle, description, cfa }) {
   if (!title) {
     title = (
@@ -48,9 +47,9 @@ function HomeFeature({ title, subtitle, description, cfa }) {
 
   return (
     <div className="flex flex-col space-y-4">
-      <h1 className="text-3xl md:text-5xl leading-snug font-bold">{title}</h1>
-      <h3 className="text-xl font-semibold md:text-2xl">{subtitle}</h3>
-      <h4 className="text-xl md:text-2xl tracking-wide">{description}</h4>
+      <h2 className="text-3xl md:text-5xl leading-snug font-bold">{title}</h2>
+      <h3 className="text-l font-semibold md:text-xl">{subtitle}</h3>
+      <h4 className="text-l md:text-xl tracking-wide text-gray-500">{description}</h4>
       {callForAction}
     </div>
   );

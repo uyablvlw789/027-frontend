@@ -26,7 +26,7 @@ const HeadingCount = () => {
     let observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
       if (entry.isIntersecting) {
-        animateValue(numberRef.current, 0, 3000000, 1000);
+        animateValue(numberRef.current, 0, 1500000000, 3000);
         observer.unobserve(numberRef.current);
       }
     }, options);
@@ -49,9 +49,9 @@ const HeadingCount = () => {
         0
       </span>
       <span className="type-a type-a-2 text-xl font-semibold">
-        developers &amp; businesses
+        累计
         <br />
-        ship faster on Netlify.
+        浏览人次
       </span>
     </div>
   );

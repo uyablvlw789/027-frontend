@@ -52,7 +52,7 @@ function Announcements() {
   };
 
   // base query string
-  let queryString = `${process.env.REACT_APP_BASE_URL}/api/announcements`;
+  let queryString = `${process.env.REACT_APP_API_URL}/announcements`;
 
   const start = (currentPage - 1) * postPerPage;
   const limit = postPerPage;

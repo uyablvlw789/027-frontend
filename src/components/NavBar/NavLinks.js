@@ -24,7 +24,7 @@ function NavLinks({ classes, isMoble, onClick }) {
         </li>
         <li className="cursor-pointer px-3">财务通道</li>
 
-        <button className="self-center w-4/5 px-4 py-2 font-semibold rounded bg-blue-600 text-white">
+        <button className="self-center w-4/5 px-4 py-2 font-semibold rounded-md bg-blue-600 text-white">
           联系我们
         </button>
       </ul>,
@@ -33,27 +33,37 @@ function NavLinks({ classes, isMoble, onClick }) {
   } else {
     return (
       <ul className="list-none flex flex-row space-x-3 lg:space-x-3 justify-between">
-        <li
-          style={{ writingMode: "horizontal-tb" }}
-          className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800"
-        >
-          <Link to="/">首页</Link>
-        </li>
-        <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
-          <Link to="/about">公司介绍</Link>
-        </li>
+        <Link to="/">
+          <li
+            style={{ writingMode: "horizontal-tb" }}
+            className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800"
+          >
+            首页
+          </li>
+        </Link>
+        <Link to="/about">
+          <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
+            公司介绍
+          </li>
+        </Link>
         <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
           主营业务
         </li>
-        <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
-          <Link to="/announcements">通知公告</Link>
-        </li>
-        <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
-          财务通道
-        </li>
-        <button className="self-center px-6 py-2 font-semibold rounded bg-blue-600 text-white hover:bg-blue-800">
-          <Link to="/contact">联系我们</Link>
-        </button>
+        <Link to="/announcements">
+          <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
+            通知公告
+          </li>
+        </Link>
+        <Link to="/">
+          <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
+            财务通道
+          </li>
+        </Link>
+        <Link to="/contact">
+          <button className="self-center px-6 py-2 font-semibold rounded bg-blue-600 text-white hover:bg-blue-800">
+            联系我们
+          </button>
+        </Link>
       </ul>
     );
   }

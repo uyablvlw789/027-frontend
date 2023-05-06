@@ -31,14 +31,24 @@ function HomeFeature({ title, subtitle, description, cfa }) {
 
   if (cfa.isButton) {
     callForAction = (
-      <button className="text-l px-6 py-3 text-white font-semibold rounded-md bg-blue-700 self-start hover:bg-blue-800">
+      <a
+        className="text-l px-6 py-3 text-white font-semibold rounded-md bg-blue-700 self-start hover:bg-blue-800"
+        target="_blank"
+        rel="noreferrer"
+        href={cfa.address}
+      >
         {cfa.content}
-      </button>
+      </a>
     );
   } else {
     callForAction = (
       // eslint-disable-next-line jsx-a11y/anchor-has-content
-      <a className="underline text-2xl md:text-3xl" href="http://localhost:3000">
+      <a
+        className="underline text-2xl md:text-3xl"
+        target="_blank"
+        rel="noreferrer"
+        href={cfa.address}
+      >
         {cfa.content}
         <BsArrowRightShort className="inline-block text-cyan-400" />
       </a>
@@ -47,7 +57,7 @@ function HomeFeature({ title, subtitle, description, cfa }) {
 
   return (
     <div className="flex flex-col space-y-4">
-      <h2 className="text-3xl md:text-5xl leading-snug font-bold">{title}</h2>
+      <h2 className="text-3xl md:text-5xl leading-snug font-bold cursor-pointer">{title}</h2>
       <h3 className="text-l font-semibold md:text-xl">{subtitle}</h3>
       <h4 className="text-l md:text-xl tracking-wide text-gray-500">{description}</h4>
       {callForAction}

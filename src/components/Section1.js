@@ -1,4 +1,4 @@
-import section1img from "../assets/section1img.webp";
+import section1img from "../assets/section1img.jpeg";
 import section1img2 from "../assets/section1img2.webp";
 
 import logoAlgolia from "../assets/logo-algolia.svg";

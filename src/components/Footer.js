@@ -13,79 +13,148 @@ const Footer = () => {
   return (
     <footer className="m-10">
       {/* Links */}
-      <div className="border-t border-b border-gray-100 p-3 mb-4">
+      <div className="border-t border-b border-gray-100 px-4 py-8 mb-4">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {/* column 1 */}
           <div className="flex flex-col space-y-3 items-start">
-            <a href="/">
-              <strong>Why netlify</strong>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://gongshang.mingluji.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              名录集
             </a>
-            <a href="/">Customers</a>
-            <a href="/">Enterprise</a>
-            <a href="/">Resourses</a>
-            <a href="/">Agency partner program</a>
-            <a href="/">Technology partner program</a>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://hkg.databasesets.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              香港数据集{" "}
+            </a>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://chengyu.18dao.net/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              成語典
+            </a>
           </div>
           {/* column 2 */}
           <div className="flex flex-col space-y-3 items-start">
-            <a href="/">
-              <strong>Products</strong>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://emojiall.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              EmojiAll
             </a>
-            <a href="/">Platform</a>
-            <a href="/">Netlify Build</a>
-            <a href="/">Netlify Edge</a>
-            <a href="/">Netlify CLI</a>
-            <a href="/">Pricing</a>
-            <a href="/">Addons</a>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.mingluji.com/mingren/"
+            >
+              名人企业名录{" "}
+            </a>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://bishun.18dao.net/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              筆順字典
+            </a>
           </div>
           {/* column 3 */}
           <div className="flex flex-col space-y-3 items-start">
-            <a href="/">
-              <strong>Docs</strong>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://zh-hans.ipshu.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              IP地址
             </a>
-            <a href="/">Jamstack book</a>
-            <a href="/">Community</a>
-            <a href="/">Security</a>
-            <a href="/">Site speed test</a>
-            <a href="/">Remotely Interesting</a>
-            <a className="flex flex-row items-center space-x-1" href="/">
-              <span>Technologies</span> <BiChevronDown />
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://114.mingluji.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              114黄页名录
+            </a>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://zidian.18dao.net/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              國語小字典
             </a>
           </div>
           {/* column 4 */}
           <div className="flex flex-col space-y-3 items-start">
-            <a href="/">
-              <strong>Contact us</strong>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://www.chahaoba.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              查号吧{" "}
             </a>
-            <a href="/">Sales</a>
-            <a href="/">Support</a>
-            <a href="/">Status</a>
-            <a href="/">Forums</a>
-            <a href="/">Hire an agency</a>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://18dao.net/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              一把刀实用查询
+            </a>
           </div>
           {/* column 5 */}
           <div className="flex flex-col space-y-3 items-start">
-            <a href="/">
-              <strong>Company</strong>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://www.youbianku.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              邮政编码{" "}
             </a>
-            <a href="/">Blog</a>
-            <a href="/">About</a>
-            <a href="/">Careers</a>
-            <a href="/">Press</a>
-            <a href="/">Jamstack Fund</a>
-            <a href="/">Netlify Store</a>
-            <a href="/">Sustainability</a>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://cidian.18dao.net/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              國語辭典簡編本
+            </a>
           </div>
           {/* column 6 */}
           <div className="flex flex-col space-y-3 items-start">
-            <a href="/">
-              <strong>Trust</strong>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://www.tongchaba.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              通查
             </a>
-            <a href="/">Trust Center</a>
-            <a href="/">Privacy</a>
-            <a href="/">Security</a>
-            <a href="/">GDPR/CCPA</a>
-            <a href="/">Abuse</a>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://dacidian.18dao.net/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              重編國語辭典修訂本
+            </a>
           </div>
         </div>
       </div>

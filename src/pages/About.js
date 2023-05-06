@@ -52,7 +52,7 @@ function About() {
       <Breadcrumb
         className="mx-10 md:mx-20 mt-5 mb-10"
         items={[
-          { name: "首页", url: "/" },
+          { name: "home", url: "/" },
           { name: "关于", url: "/about" },
         ]}
       />

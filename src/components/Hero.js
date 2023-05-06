@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import Parallax from "parallax-js";
 import { useQuery } from "@tanstack/react-query";
+import Skeleton from "react-loading-skeleton";
 
 function Hero() {
   const ref1 = useRef();
@@ -15,7 +16,6 @@ function Hero() {
   const query = useQuery({
     queryKey: ["hero"],
     queryFn: () => {
-      // TODO: 从后端获取数据
       return axios.get(`${process.env.REACT_APP_API_URL}/hero`, {
         params: {
           populate: "*",
@@ -47,7 +47,41 @@ function Hero() {
   }, [data]);
 
   if (isLoading) {
-    return <>isLoading</>;
+    return (
+      <div className="md:mb-28 -mt-16 md:-mt-24">
+        <div id="scene" className="absolute h-screen inset-0">
+          <div className="absolute w-1/2 aspect-5/3 md:w-1/3 top-36 -left-12 md:-left-24">
+            <Skeleton className="w-full h-full" />
+          </div>
+          <div className="absolute w-1/2 aspect-5/3 md:w-1/3 top-1/3 right-0">
+            <Skeleton className="w-full h-full" />
+          </div>
+          <div className="absolute w-1/2 aspect-5/3 md:w-1/3 top-3/4 -left-12 md:-left-32">
+            <Skeleton className=" w-full h-full" />
+          </div>
+        </div>
+        <div className="h-screen flex flex-col justify-center items-center relative">
+          <div className="w-4/5 h-12 mb-2">
+            <Skeleton className="w-full h-full" />
+          </div>
+          <div className="w-1/3 h-12 mb-2">
+            <Skeleton className="w-full h-full" />
+          </div>
+          <div className="w-1/3 h-10">
+            <Skeleton className="w-full h-full" />
+          </div>
+
+          <div className="-z-10 w-24 h-24 bg-gray-100 absolute top-2/3 left-1/3"></div>
+          <div className="-z-10 w-24 h-24 bg-gray-100 absolute top-2/3 left-2/3"></div>
+          <div className="-z-10 w-24 h-24 bg-gray-100 absolute top-2/3 -left-1/3"></div>
+          <div className="-z-10 w-24 h-24 bg-gray-100 absolute top-1/4 left-3/4"></div>
+          <div className="-z-10 w-24 h-24 bg-gray-100 absolute top-1/4 left-1/4"></div>
+
+          <div className="-z-10 w-24 h-24 bg-gray-100 absolute top-0 right-1/2"></div>
+          <div className="-z-10 w-24 h-24 bg-gray-100 absolute top-0 left-2/3"></div>
+        </div>
+      </div>
+    );
   } else {
     // Hero 1 2 3图片
     const [hero1, hero2, hero3] = data.data.data.attributes.coverimages.data;
@@ -59,26 +93,38 @@ function Hero() {
       <div className="md:mb-28 -mt-16 md:-mt-24">
         <div id="scene" className="absolute h-screen inset-0">
           <div ref={ref1} className="absolute w-1/2 md:w-1/3 top-36 -left-12 md:-left-24">
-            <img
-              src={`${process.env.REACT_APP_STRAPI_URL}${hero1.attributes.url}`} // 替换图片路径
-              data-depth="0.4"
-              alt=""
-            />
+            {hero1 ? (
+              <img
+                src={`${process.env.REACT_APP_STRAPI_URL}${hero1.attributes.url}`} // 替换图片路径
+                data-depth="0.4"
+                alt=""
+              />
+            ) : (
+              <Skeleton />
+            )}
           </div>
           <div ref={ref2} className="absolute w-1/2 md:w-1/3  top-1/3 right-0">
-            <img
-              data-depth="0.4"
-              src={`${process.env.REACT_APP_STRAPI_URL}${hero2.attributes.url}`}
-              alt=""
-            />
+            {hero2 ? (
+              <img
+                data-depth="0.4"
+                src={`${process.env.REACT_APP_STRAPI_URL}${hero2.attributes.url}`}
+                alt=""
+              />
+            ) : (
+              <Skeleton />
+            )}
           </div>
           <div ref={ref3} className="absolute w-1/2 md:w-1/3 top-3/4 -left-12 md:-left-32">
-            <img
-              className="absolute top-2/3 left-1/2"
-              src={`${process.env.REACT_APP_STRAPI_URL}${hero3.attributes.url}`}
-              data-depth="0.4"
-              alt=""
-            />
+            {hero3 ? (
+              <img
+                className="absolute top-2/3 left-1/2"
+                src={`${process.env.REACT_APP_STRAPI_URL}${hero3.attributes.url}`}
+                data-depth="0.4"
+                alt=""
+              />
+            ) : (
+              <Skeleton />
+            )}
           </div>
         </div>
         <div className="h-screen flex flex-col justify-center items-center relative">

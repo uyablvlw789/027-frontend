@@ -18,11 +18,17 @@ function NavLinks({ classes, isMoble, onClick }) {
           </Link>
         </li>
         <li className="cursor-pointer px-3">公司介绍</li>
-        <li className="cursor-pointer px-3">主营业务</li>
+        <li className="cursor-pointer px-3">
+          <Link to="/business" className="px-3">
+            主营业务
+          </Link>
+        </li>
         <li className="cursor-pointer px-3">
           <Link to="/announcements">通知公告</Link>
         </li>
-        <li className="cursor-pointer px-3">财务通道</li>
+        <li className="cursor-pointer px-3">
+          <Link to="/finance">财务通道</Link>
+        </li>
 
         <button className="self-center w-4/5 px-4 py-2 font-semibold rounded-md bg-blue-600 text-white">
           联系我们
@@ -46,15 +52,17 @@ function NavLinks({ classes, isMoble, onClick }) {
             公司介绍
           </li>
         </Link>
-        <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
-          主营业务
-        </li>
+        <Link to="/businesses">
+          <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
+            主营业务
+          </li>
+        </Link>
         <Link to="/announcements">
           <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
             通知公告
           </li>
         </Link>
-        <Link to="/">
+        <Link to="/finance">
           <li className="cursor-pointer px-2 lg:px-4 py-2 border-2 border-transparent rounded-md hover:border-blue-800">
             财务通道
           </li>

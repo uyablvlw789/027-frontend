@@ -13,9 +13,9 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { Breadcrumb } from "../components/Breadcumb";
 
 const options = [
-  { value: "blog", label: "blogs & articles" },
-  { value: "news", label: "news & announcements" },
-  { value: "all", label: "all" },
+  { value: "blog", label: "博客/文章" },
+  { value: "news", label: "公告/新闻" },
+  { value: "all", label: "所有" },
 ];
 
 function Announcements() {
@@ -153,12 +153,12 @@ function Announcements() {
         className="mx-10 md:mx-20 mt-5 mb-10"
         items={[
           { name: "home", url: "/" },
-          { name: "announcements", url: "/announcements" },
+          { name: "通知公告", url: "/announcements" },
         ]}
       />
       <div className="mx-10 md:mx-20">
-        <h1 className="text-3xl font-bold mb-10">Blogs and Annoucements</h1>
-        <p className="font-semibold text-xl mb-3">Please select category</p>
+        <h1 className="text-3xl font-bold mb-10">通知公告</h1>
+        <p className="font-semibold text-xl mb-3">请选择类别</p>
         <Select
           className="md:w-1/2 lg:w-1/3 mb-10"
           styles={{

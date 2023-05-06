@@ -35,8 +35,6 @@ function LatestArticleCards() {
 
   const { data: announcements } = query.data.data;
 
-  console.log(announcements);
-
   return (
     <>
       {announcements.map((announcement) => {

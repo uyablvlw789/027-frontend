@@ -16,7 +16,7 @@ function LargeCard({ backgroundImage, title, tags, titleTextTune }) {
         <div className="bottom-2 flex flex-col self-end">
           <p
             className={`${
-              titleTextTune === "light" ? "text-gray-50" : "text-gray-700"
+              titleTextTune === "light" ? "text-white" : "text-gray-700"
             } mb-3 text-2xl md:text-4xl font-bold filter-none z-10`}
           >
             {title}
@@ -25,7 +25,7 @@ function LargeCard({ backgroundImage, title, tags, titleTextTune }) {
             <div
               className={`border ${
                 titleTextTune === "light"
-                  ? "text-gray-50 border-gray-50"
+                  ? "text-white border-gray-50"
                   : "text-gray-700 border-gray-700"
               } px-1 py-0 mr-2 rounded-md z-10`}
             >
@@ -34,7 +34,7 @@ function LargeCard({ backgroundImage, title, tags, titleTextTune }) {
             <div
               className={`border ${
                 titleTextTune === "light"
-                  ? "text-gray-50 border-gray-50"
+                  ? "text-white border-gray-50"
                   : "text-gray-700 border-gray-700"
               }  px-1 py-0 mr-2 rounded-md z-10`}
             >

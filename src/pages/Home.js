@@ -23,7 +23,7 @@ function Home() {
       <h2 className="m-6 md:m-10 text-5xl">主营业务</h2>
       <Section>
         <div className="flex flex-col gap-6 md:flex-row ">
-          <a target="_blank" href="https://ipshu.com" rel="noreferrer">
+          <a target="_blank" href="https://so.mingluji.com" rel="noreferrer">
             <LargeCard
               backgroundImage={templateEcommerce}
               title="新工商-数据商店"
@@ -31,7 +31,7 @@ function Home() {
               tags={["企业信息查询", "实时更新"]}
             />
           </a>
-          <a target="_blank" href="https://ipshu.com" rel="noreferrer">
+          <a target="_blank" href="https://zh-hans.ipshu.com/" rel="noreferrer">
             <LargeCard
               backgroundImage={templateContent}
               title="IPSHU-路由器"

@@ -35,11 +35,15 @@ function LatestArticleCards() {
 
   const { data: announcements } = query.data.data;
 
+  console.log(announcements);
+
   return (
     <>
       {announcements.map((announcement) => {
         return (
           <ArticleCard
+            key={announcement.id}
+            id={announcement.id}
             title={announcement.attributes.title}
             backgroundImage={announcement.attributes.coverimage}
           />

@@ -23,7 +23,8 @@ function Announcements() {
   useEffect(() => {
     setCurrentPage(Number.parseInt(searchParams.get("page") || 1));
     setSelectedOption(
-      options.find((option) => option.value === searchParams.get("type")) || options[2]
+      options.find((option) => option.value === searchParams.get("type")) ||
+        options[2]
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
@@ -31,11 +32,14 @@ function Announcements() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [selectedOption, setSelectedOption] = useState(
-    options.find((option) => option.value === searchParams.get("type")) || options[2]
+    options.find((option) => option.value === searchParams.get("type")) ||
+      options[2]
   );
 
   // States for pagination
-  const [currentPage, setCurrentPage] = useState(Number.parseInt(searchParams.get("page")) || 1);
+  const [currentPage, setCurrentPage] = useState(
+    Number.parseInt(searchParams.get("page")) || 1
+  );
 
   // 每页显示多少篇文章，当前六页
   const [postPerPage, setpostPerPage] = useState(6);
@@ -58,7 +62,12 @@ function Announcements() {
   const limit = postPerPage;
 
   const query = useQuery({
-    queryKey: ["announcements", `${selectedOption.value}`, `${start}`, `${limit}`],
+    queryKey: [
+      "announcements",
+      `${selectedOption.value}`,
+      `${start}`,
+      `${limit}`,
+    ],
     queryFn: () => {
       if (selectedOption.value === "all") {
         return axios.get(queryString, {
@@ -121,42 +130,44 @@ function Announcements() {
       }
       return announcement.attributes.type === selectedOption.value;
     };
-    const AnnouncemenceList = announcements.filter(filterType).map((announcement) => {
-      const {
-        title,
-        publishedAt,
-        type,
-        coverimage: {
-          data: {
-            attributes: { url },
+    const AnnouncemenceList = announcements
+      .filter(filterType)
+      .map((announcement) => {
+        const {
+          title,
+          publishedAt,
+          type,
+          coverimage: {
+            data: {
+              attributes: { url },
+            },
           },
-        },
-      } = announcement.attributes;
-      return (
-        <AnnouncementCard
-          id={announcement.id}
-          key={announcement.id}
-          title={title}
-          category={type}
-          date={publishedAt}
-          coverImg={url}
-          compact={false} // 不是紧凑模式
-        />
-      );
-    });
+        } = announcement.attributes;
+        return (
+          <AnnouncementCard
+            id={announcement.id}
+            key={announcement.id}
+            title={title}
+            category={type}
+            date={publishedAt}
+            coverImg={url}
+            compact={false} // 不是紧凑模式
+          />
+        );
+      });
     content = AnnouncemenceList;
   }
 
   return (
     <>
       <Breadcrumb
-        className="mx-10 md:mx-20 mt-5 mb-10"
+        className="md:container mx-6 md:mx-auto mt-5 mb-10"
         items={[
           { name: "home", url: "/" },
           { name: "通知公告", url: "/announcements" },
         ]}
       />
-      <div className="mx-10 md:mx-20">
+      <div className="md:container mx-6 md:mx-auto">
         <h1 className="text-3xl font-bold mb-10">通知公告</h1>
         <p className="font-semibold text-xl mb-3">请选择类别</p>
         <Select
@@ -182,7 +193,9 @@ function Announcements() {
           onChange={handleSelectChange}
           options={options}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-3">{content}</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-3">
+          {content}
+        </div>
         <Pagination
           selectedOption={selectedOption}
           totalPosts={pageCount}

@@ -66,7 +66,7 @@ function Announcement() {
   return (
     <>
       <Breadcrumb
-        className="mx-10 md:mx-20 mt-5 mb-10"
+        className="md:container mx-6 md:mx-auto mt-5 mb-10"
         items={[
           { name: "首页", url: "/" },
           { name: "通知公告", url: "/announcements" },
@@ -76,7 +76,7 @@ function Announcement() {
           },
         ]}
       />
-      <div className="m-10 md:m-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="md:container mx-6 md:mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {contentToRender}
         {/* 侧边栏 wrapper */}
         <div className="lg:col-span-1">

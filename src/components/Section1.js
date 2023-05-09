@@ -17,11 +17,11 @@ function Section1() {
       const translateLeft = 0.05 * scroll;
       const translateRight = -10 + 0.03 * scroll;
 
-      const scale = 0.2 + 0.001 * scroll;
+      const scale = 0.25 + 0.001 * scroll;
 
       if (scale <= 1 && translateLeft < 35) {
         imgRightRef.current.style = `transform: scale(${scale}) translate(${translateRight}%)`;
-        imgLeftRef.current.style = `transform: translate(-${translateLeft}%)`;
+        imgLeftRef.current.style = `transform: scale(${scale}) translate(-${translateLeft}%)`;
       }
     };
 
@@ -34,16 +34,16 @@ function Section1() {
 
   return (
     // Image container
-    <div style={{ height: "60vh" }} className="relative md:mb-40">
+    <div style={{ height: "60vh" }} className="relative md:mb-40 overflow-hidden">
       <img
         ref={imgLeftRef}
-        className="w-1/3 absolute top-1/3 left-1/3 object-contain"
+        className="w-3/5 md:w-1/2 absolute top-20 left-1/4 md:top-20 md:left-1/3 object-contain"
         src={section1img2}
         alt=""
       />
       <img
         ref={imgRightRef}
-        className="w-2/3 md:w-1/2 object-contain absolute top-1/4 left-1/4 shadow-lg"
+        className="w-4/5 md:w-1/2 object-contain absolute top-1/4 right-4 md:right-1/4 shadow-lg"
         style={{ transform: "scale(0.5)" }}
         data-src={section1img}
         src={section1img}

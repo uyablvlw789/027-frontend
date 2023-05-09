@@ -23,7 +23,7 @@ export default function Header() {
     <header
       ref={headerRef}
       style={{ backgroundColor: "rgb(255 255 255 / 65%)" }}
-      className="sticky top-0 p-4 z-10 backdrop-blur-sm"
+      className="sticky top-0 p-4 z-20 backdrop-blur-sm"
     >
       <div className="container flex items-center justify-between mx-auto">
         {/* 品牌名字和logo */}

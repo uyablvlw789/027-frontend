@@ -3,6 +3,7 @@ import ContactCard from "../components/ContactCard";
 import { useQuery } from "@tanstack/react-query";
 import { Breadcrumb } from "../components/Breadcumb";
 import axios from "axios";
+import Skeleton from "react-loading-skeleton";
 
 function Contact() {
   const query = useQuery({
@@ -16,7 +17,27 @@ function Contact() {
     },
   });
   const { data, isLoading, isError, error } = query;
-  if (isLoading) return <>isLoading</>;
+  if (isLoading)
+    return (
+      <>
+        <Breadcrumb
+          className="md:container mx-6 md:mx-auto mt-5 mb-10"
+          items={[
+            { name: "home", url: "/" },
+            { name: "联系我们", url: "/contact" },
+          ]}
+        />
+        <div className="md:container mx-6 md:mx-auto">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
+            <div className="md:col-span-2">
+              <Skeleton className="h-40" />
+            </div>
+            <Skeleton className="h-40" />
+            <Skeleton className="h-40" />
+          </div>
+        </div>
+      </>
+    );
   else if (isError) return <>isError</>;
   else {
     const { address, addressLink, qq, phone } = data.data.data.attributes;
@@ -24,13 +45,13 @@ function Contact() {
     return (
       <>
         <Breadcrumb
-          className="mx-10 md:mx-20 mt-5 mb-10"
+          className="container mx-6 md:mx-auto mt-5 mb-10"
           items={[
             { name: "home", url: "/" },
             { name: "联系我们", url: "/contact" },
           ]}
         />
-        <div className="max-w-4xl m-6 md:m-10 md:mx-auto">
+        <div className="container mx-6 md:mx-auto">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
             <div className="md:col-span-2">
               <ContactCard
@@ -104,8 +125,14 @@ function Contact() {
                       fill="#37474f"
                       d="M238 149a10 14 0 0 1-20 0 10 14 0 0 1 20 0zm46-13c-6 0-10 6-10 13 0 8 4-4 10-4 5 0 9 12 9 4 0-7-4-13-9-13zm27 14a23 33 0 0 1-46 0 23 33 0 0 1 46 0zm-64 0a23 33 0 0 1-46 0 23 33 0 0 1 46 0zm127 79v-56a119 119 0 0 0-237 0v56c-18 25-35 55-37 78 0 44 13 40 13 40 5 0 15-9 23-20 19 55 65 93 120 93s101-38 120-93c8 11 18 20 23 20 0 0 13 4 13-40 0-23-17-54-37-78z"
                     ></path>
-                    <path fill="#ffc107" d="M183 204a73 13 0 1 1 146 0 73 23 0 1 1-146 0z"></path>
-                    <path fill="#eceff1" d="M171 237a88 132 0 1 0 170 0z"></path>
+                    <path
+                      fill="#ffc107"
+                      d="M183 204a73 13 0 1 1 146 0 73 23 0 1 1-146 0z"
+                    ></path>
+                    <path
+                      fill="#eceff1"
+                      d="M171 237a88 132 0 1 0 170 0z"
+                    ></path>
                     <path
                       fill="#ff3d00"
                       d="M391 220c-4-14-9-20-19-12a235 225 0 0 1-230 0c-10-7-15-2-19 12s-6 18 6 26l32 15c-6 32-5 63-5 65 1 13 12 12 27 12 14-1 26 0 26-15 0-8 0-27 3-46 15 3 29 5 46 5 67 0 126-35 127-36 11-7 9-11 6-26z"

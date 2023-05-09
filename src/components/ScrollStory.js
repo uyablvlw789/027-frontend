@@ -147,10 +147,10 @@ function ScrollStory() {
 
   return (
     <div ref={elementRef}>
-      <div className="m-6 md:m-10 grid grid-cols-1 gap-10 mb-60 lg:grid-cols-2">
+      <div className="m-6 md:m-10 grid grid-cols-1 gap-10 mb-16 md:mb-60 lg:grid-cols-2">
         {/* Left side */}
 
-        <div className="min-h-screen flex flex-col space-y-60 mt-20 md:space-y-30 md:mt-80 md:pb-120">
+        <div className="min-h-screen flex flex-col space-y-16 md:space-y-60 md:mt-80 md:pb-120">
           <HomeFeature {...homeFeatureData[0]} />
           {/* Testimonial */}
           <TestimonialBox {...testimonialData[0]} />

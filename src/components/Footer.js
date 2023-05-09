@@ -1,19 +1,8 @@
-import { BsFacebook, BsInstagram } from "react-icons/bs";
-import { BsTwitter } from "react-icons/bs";
-
-import { BsLinkedin } from "react-icons/bs";
-
-import { BiChevronDown } from "react-icons/bi";
-import { BsPinterest } from "react-icons/bs";
-import { Link } from "react-router-dom";
-import { BsTencentQq } from "react-icons/bs";
-import { FiMail } from "react-icons/fi";
-
 const Footer = () => {
   return (
-    <footer className="m-10">
+    <footer className="container mx-6 md:mx-auto">
       {/* Links */}
-      <div className="border-t border-b border-gray-100 px-4 py-8 mb-4">
+      <div className="border-t border-b border-gray-100 py-8 mb-4">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {/* column 1 */}
           <div className="flex flex-col space-y-3 items-start">
@@ -115,6 +104,14 @@ const Footer = () => {
             >
               一把刀实用查询
             </a>
+            <a
+              className="border-b-2 border-transparent hover:border-blue-600 duration-100"
+              href="https://zip.postcodebase.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              美国邮编
+            </a>
           </div>
           {/* column 5 */}
           <div className="flex flex-col space-y-3 items-start">
@@ -180,7 +177,10 @@ const Footer = () => {
                 fill="#37474f"
                 d="M238 149a10 14 0 0 1-20 0 10 14 0 0 1 20 0zm46-13c-6 0-10 6-10 13 0 8 4-4 10-4 5 0 9 12 9 4 0-7-4-13-9-13zm27 14a23 33 0 0 1-46 0 23 33 0 0 1 46 0zm-64 0a23 33 0 0 1-46 0 23 33 0 0 1 46 0zm127 79v-56a119 119 0 0 0-237 0v56c-18 25-35 55-37 78 0 44 13 40 13 40 5 0 15-9 23-20 19 55 65 93 120 93s101-38 120-93c8 11 18 20 23 20 0 0 13 4 13-40 0-23-17-54-37-78z"
               ></path>
-              <path fill="#ffc107" d="M183 204a73 13 0 1 1 146 0 73 23 0 1 1-146 0z"></path>
+              <path
+                fill="#ffc107"
+                d="M183 204a73 13 0 1 1 146 0 73 23 0 1 1-146 0z"
+              ></path>
               <path fill="#eceff1" d="M171 237a88 132 0 1 0 170 0z"></path>
               <path
                 fill="#ff3d00"
@@ -226,7 +226,9 @@ const Footer = () => {
         <ul className="flex flex-col items-center space-y-3 bg-gray-50 p-3 w-full rounded-md md:flex-row md:space-y-0 md:space-x-4 md:justify-center">
           <li className="flex flex-row items-center">公安备:42010302000132</li>
           <li className="flex flex-row items-center">
-            <a href="https://beian.miit.gov.cn/#/Integrated/index">鄂ICP备:B2-20110095-13</a>
+            <a href="https://beian.miit.gov.cn/#/Integrated/index">
+              鄂ICP备:B2-20110095-13
+            </a>
           </li>
         </ul>
       </div>

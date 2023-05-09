@@ -36,10 +36,10 @@ const HeadingCount = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center md:flex-row space-x-5 mb-16 ">
+    <div className="flex flex-col justify-center items-center md:flex-row space-x-5 mb-16  -mt-10">
       <span
         ref={numberRef}
-        className="font-semibold text-6xl"
+        className="text-4xl font-semibold md:text-6xl"
         style={{
           background: "linear-gradient(90.05deg,#149cab -43.75%,#1b205b 45.9%,#783afa 123.14%)",
           WebkitBackgroundClip: "text",
@@ -50,7 +50,7 @@ const HeadingCount = () => {
       </span>
       <span className="type-a type-a-2 text-xl font-semibold">
         累计
-        <br />
+        <br className="hidden md:block " />
         浏览人次
       </span>
     </div>

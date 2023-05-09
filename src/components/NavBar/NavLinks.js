@@ -17,9 +17,13 @@ function NavLinks({ classes, isMoble, onClick }) {
             <div>首页</div>
           </Link>
         </li>
-        <li className="cursor-pointer px-3">公司介绍</li>
         <li className="cursor-pointer px-3">
-          <Link to="/business" className="px-3">
+          <Link to="/about" >
+          公司介绍 
+          </Link>
+          </li>
+        <li className="cursor-pointer px-3">
+          <Link to="/businesses" className="px-3">
             主营业务
           </Link>
         </li>

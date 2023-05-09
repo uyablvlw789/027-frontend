@@ -60,7 +60,7 @@ function Aside() {
 
     return (
       <aside>
-        <h1 className="text-3xl mb-4">Latest Posts</h1>
+        <h1 className="text-3xl mb-4">最近发布</h1>
         {contentToRender}
       </aside>
     );

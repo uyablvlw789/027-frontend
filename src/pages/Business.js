@@ -9,7 +9,15 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { replaceImagePaths } from "../utils/ReplaceImagePath";
 import Aside from "../components/Aside";
 
-function Business({ name }) {
+import { useLocation } from "react-router-dom";
+
+function Business({ name = "emoji-maker" }) {
+  const location = useLocation();
+
+  const path = location.pathname;
+  const parts = path.split("/");
+  name = parts[parts.length - 1];
+
   const query = useQuery({
     queryKey: ["business", name],
     queryFn: () => {
@@ -22,7 +30,11 @@ function Business({ name }) {
   let contentToRender;
 
   if (query.isLoading) {
-    contentToRender = <div>loading</div>;
+    contentToRender = (
+      <div className="lg:col-span-2 pr-16">
+        <Skeleton className="w-full h-full" />
+      </div>
+    );
   } else {
     console.log(query.data.data.data);
     const {
@@ -30,14 +42,16 @@ function Business({ name }) {
     } = query.data.data.data[0];
 
     contentToRender = (
-      // 博客内容主体
+      // 主营业务详情页主体
       <div className="lg:col-span-2 md:pr-16 flex flex-col items-start mb-10">
-        <h1 className="text-3xl font-semibold mb-4 cursor-pointer line-clamp-2">{description}</h1>
+        <h1 className="text-3xl font-semibold mb-4 cursor-pointer line-clamp-2">
+          {description}
+        </h1>
         {/* 类型、标签和发布日期的 wrapper */}
-        <div className="flex flex-row space-x-5 items-center mb-6">
+        <div className="flex flex-col space-y-3 items-start md:flex-row md:space-y-0 md:space-x-5 md:items-center mb-6">
           {/* 类型/标签 的 wrapper */}
           <Badge name={name} />
-          <div>Published at {dateFormat(publishedAt, "paddedShortDate")}</div>
+          <div>发布于 {dateFormat(publishedAt, "paddedShortDate")}</div>
         </div>
         <div className="prose prose-p:text-gray-600 max-w-none">
           <ReactMarkdown>{replaceImagePaths(detail)}</ReactMarkdown>
@@ -49,13 +63,13 @@ function Business({ name }) {
   return (
     <>
       <Breadcrumb
-        className="mx-10 md:mx-20 mt-5 mb-10"
+        className="md:container mx-6 md:mx-auto mt-5 mb-10"
         items={[
           { name: "首页", url: "/" },
           { name: "主营业务", url: "/businesses" },
         ]}
       />
-      <div className="m-10 md:m-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="md:container mx-6 md:mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {contentToRender}
         {/* 侧边栏 wrapper */}
         <div className="lg:col-span-1">

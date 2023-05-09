@@ -50,14 +50,14 @@ function Hero() {
     return (
       <div className="md:mb-28 -mt-16 md:-mt-24">
         <div id="scene" className="absolute h-screen inset-0">
-          <div className="absolute w-1/2 aspect-5/3 md:w-1/3 top-36 -left-12 md:-left-24">
+          <div className="absolute w-2/3 aspect-5/3 md:w-1/3 top-18 -left-12 md:-left-24">
             <Skeleton className="w-full h-full" />
           </div>
-          <div className="absolute w-1/2 aspect-5/3 md:w-1/3 top-1/3 right-0">
+          <div className="absolute w-2/3 aspect-5/3 md:w-1/3 bottom-0 right-0">
             <Skeleton className="w-full h-full" />
           </div>
-          <div className="absolute w-1/2 aspect-5/3 md:w-1/3 top-3/4 -left-12 md:-left-32">
-            <Skeleton className=" w-full h-full" />
+          <div className="hidden md:block absolute w-1/2 aspect-5/3 md:w-1/3 top-3/4 -left-12 md:-left-32">
+            <Skeleton className="w-full h-full" />
           </div>
         </div>
         <div className="h-screen flex flex-col justify-center items-center relative">
@@ -87,12 +87,16 @@ function Hero() {
     const [hero1, hero2, hero3] = data.data.data.attributes.coverimages.data;
     isMounted.current = true;
 
-    const { title, description, primaryButton, secondaryButton } = data.data.data.attributes;
+    const { title, description, primaryButton, secondaryButton } =
+      data.data.data.attributes;
 
     return (
       <div className="md:mb-28 -mt-16 md:-mt-24">
         <div id="scene" className="absolute h-screen inset-0">
-          <div ref={ref1} className="absolute w-1/2 md:w-1/3 top-36 -left-12 md:-left-24">
+          <div
+            ref={ref1}
+            className="absolute w-2/3 md:w-1/3 top-18 -left-12 md:-left-24"
+          >
             {hero1 ? (
               <img
                 src={`${process.env.REACT_APP_STRAPI_URL}${hero1.attributes.url}`} // 替换图片路径
@@ -103,7 +107,7 @@ function Hero() {
               <Skeleton />
             )}
           </div>
-          <div ref={ref2} className="absolute w-1/2 md:w-1/3  top-1/3 right-0">
+          <div ref={ref2} className="absolute w-2/3 md:w-1/3 bottom-0 right-0">
             {hero2 ? (
               <img
                 data-depth="0.4"
@@ -114,7 +118,10 @@ function Hero() {
               <Skeleton />
             )}
           </div>
-          <div ref={ref3} className="absolute w-1/2 md:w-1/3 top-3/4 -left-12 md:-left-32">
+          <div
+            ref={ref3}
+            className="hidden md:block absolute w-1/2 md:w-1/3 top-3/4 -left-12 md:-left-32"
+          >
             {hero3 ? (
               <img
                 className="absolute top-2/3 left-1/2"
@@ -127,11 +134,11 @@ function Hero() {
             )}
           </div>
         </div>
-        <div className="h-screen flex flex-col justify-center items-center relative">
-          <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center cursor-pointer">
+        <div className="h-screen flex flex-col justify-center items-center relative overflow-hidden">
+          <h1 className=" mx-2 text-4xl md:text-6xl font-bold mb-8 text-center cursor-pointer">
             {title}
           </h1>
-          <h2 className=" tracking-tight leading-tight md:leading-normal md:tracking-normal text-2xl w-1/2 text-center mb-6 cursor-pointer">
+          <h2 className=" tracking-tight leading-tight md:leading-normal md:tracking-normal text-2xl w-3/4 text-center mb-6 cursor-pointer">
             {description}
           </h2>
           <div className="flex flex-col space-y-4 justify-center md:flex-row md:space-y-0 md:space-x-3 ">

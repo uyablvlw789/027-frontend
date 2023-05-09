@@ -20,7 +20,7 @@ function Home() {
       <Section1 />
       <HeadingCount />
       <ScrollStory />
-      <h2 className="m-6 md:m-10 text-5xl">主营业务</h2>
+      <h2 className="m-6 md:m-10 text-5xl">特色项目</h2>
       <Section>
         <div className="flex flex-col gap-6 md:flex-row ">
           <a target="_blank" href="https://so.mingluji.com" rel="noreferrer">
@@ -29,6 +29,8 @@ function Home() {
               title="新工商-数据商店"
               titleTextTune="light"
               tags={["企业信息查询", "实时更新"]}
+              detailLink="businesses/so-mingluji"
+              hyperLink="https://so.mingluji.com"
             />
           </a>
           <a target="_blank" href="https://zh-hans.ipshu.com/" rel="noreferrer">
@@ -37,6 +39,8 @@ function Home() {
               title="IPSHU-路由器"
               titleTextTune="light"
               tags={["IP查询", "归属地"]}
+              detailLink="businesses/router-brand-list"
+              hyperLink="https://zh-hans.ipshu.com/router-brand-list"
             />
           </a>
           <a target="_blank" href="https://tongchaba.com" rel="noreferrer">
@@ -44,15 +48,17 @@ function Home() {
               backgroundImage={tongcha}
               title="通查-身份验证"
               tags={["企业信息查询", "个人身份验证"]}
+              detailLink={"businesses/identification-name-lookup"}
+              hyperLink={"https://www.tongchaba.com/zmxy"}
             />
           </a>
-          <Link to="/businesses/emoji-maker">
-            <LargeCard
-              backgroundImage={emojiMaker}
-              title="emojiall-emoji maker"
-              tags={["emoji maker", "自己制作emoji表情包"]}
-            />
-          </Link>
+          <LargeCard
+            backgroundImage={emojiMaker}
+            title="emojiall-emoji maker"
+            tags={["emoji maker", "自己制作emoji表情包"]}
+            detailLink="businesses/emoji-maker"
+            hyperLink="https://www.emojiall.com/zh-hans/emoji-maker-page"
+          />
         </div>
       </Section>
 

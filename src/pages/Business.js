@@ -11,18 +11,21 @@ import Aside from "../components/Aside";
 
 import { useLocation } from "react-router-dom";
 
-function Business({ name = "emoji-maker" }) {
+function Business({ name = "emoji-maker", filterById = true, id }) {
   const location = useLocation();
 
   const path = location.pathname;
   const parts = path.split("/");
   name = parts[parts.length - 1];
 
+  const filterBy = filterById ? "filters[id][$eq]" : "filters[name][$eq]";
+
   const query = useQuery({
-    queryKey: ["business", name],
+    queryKey: filterById ? ["business", id] : ["business", name],
+
     queryFn: () => {
       return axios.get(`${process.env.REACT_APP_API_URL}/businesses`, {
-        params: { "filters[name][$eq]": name },
+        params: { [filterBy]: name },
       });
     },
   });
@@ -54,7 +57,7 @@ function Business({ name = "emoji-maker" }) {
           <div>发布于 {dateFormat(publishedAt, "paddedShortDate")}</div>
         </div>
         <div className="prose prose-p:text-gray-600 max-w-none">
-          <ReactMarkdown>{replaceImagePaths(detail)}</ReactMarkdown>
+          {detail && <ReactMarkdown>{replaceImagePaths(detail)}</ReactMarkdown>}
         </div>
       </div>
     );

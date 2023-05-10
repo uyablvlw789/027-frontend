@@ -5,7 +5,16 @@ import "react-loading-skeleton/dist/skeleton.css";
 import classNames from "classnames";
 import Badge from "./Badge";
 
-function AnnouncementCard({ id, title, category, date, coverImg, className, compact }) {
+function AnnouncementCard({
+  id,
+  title,
+  category,
+  date,
+  coverImg,
+  className,
+  compact,
+  type = "announcements",
+}) {
   // 是否为紧凑模式？ 默认不是
   if (!compact) {
     compact = false;
@@ -30,7 +39,9 @@ function AnnouncementCard({ id, title, category, date, coverImg, className, comp
           <p>{dateFormat(date, "paddedShortDate")}</p>
         </div>
 
-        <h2 className="font-bold text-2xl cursor-pointer hover:underline line-clamp-2">{title}</h2>
+        <h2 className="font-bold text-2xl cursor-pointer hover:underline line-clamp-2">
+          {title}
+        </h2>
       </div>
     );
   }
@@ -41,7 +52,9 @@ function AnnouncementCard({ id, title, category, date, coverImg, className, comp
         <div className="flex flex-row space-x-2">
           <Badge name={category} />
 
-          <h2 className="font-bold text-xl cursor-pointer hover:underline line-clamp-1">{title}</h2>
+          <h2 className="font-bold text-xl cursor-pointer hover:underline line-clamp-1">
+            {title}
+          </h2>
         </div>
         <p>{dateFormat(date, "paddedShortDate")}</p>
       </div>
@@ -54,7 +67,7 @@ function AnnouncementCard({ id, title, category, date, coverImg, className, comp
         onClick={() => {
           window.scrollTo(0, 0);
         }}
-        to={`/announcements/${id}`}
+        to={`/${type}/${id}`}
       >
         <img
           className="w-full aspect-[2/1] rounded-xl hover:-translate-y-2 hover:shadow-xl duration-100 cursor-pointer object-cover mb-3"

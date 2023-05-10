@@ -41,6 +41,8 @@ function Businesses() {
       const { name, picture, description } = business.attributes;
       return (
         <AnnouncementCard
+          key={business.id}
+          type="businesses"
           id={business.id}
           category={name}
           title={description}

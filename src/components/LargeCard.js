@@ -26,7 +26,7 @@ function LargeCard({
             window.scrollTo(0, 0);
           }}
           to={detailLink}
-          className="flex"
+          className="flex flex-1"
         >
           <div className="bottom-2 flex flex-col self-end">
             <p

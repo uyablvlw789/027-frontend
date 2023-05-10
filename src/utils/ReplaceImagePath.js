@@ -4,7 +4,7 @@ export function replaceImagePaths(markdownString) {
   const regex = /!\[.*\]\((.*)\)/g;
   const matches = markdownString.match(regex);
   // 开发模式后端url
-  const devBackendPath = "http://localhost:1337";
+  const devBackendPath = process.env.REACT_APP_STRAPI_URL;
   if (matches) {
     matches.forEach((match) => {
       const imagePath = match.replace(/!\[.*\]\(/, "").replace(")", "");

@@ -6,12 +6,11 @@ import Section from "../components/Section";
 import LargeCard from "../components/LargeCard";
 
 import tongcha from "../assets/tongcha.jpg";
-import emoji from "../assets/emoji.png";
+
 import emojiMaker from "../assets/emoji-maker.jpg";
 import templateEcommerce from "../assets/template-ecommerce.webp";
 import templateContent from "../assets/template-content.webp";
 import LatestArticleCards from "../components/LatestArticleCards";
-import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -29,7 +28,7 @@ function Home() {
               title="新工商-数据商店"
               titleTextTune="light"
               tags={["企业信息查询", "实时更新"]}
-              detailLink="businesses/so-mingluji"
+              detailLink="businesses/6"
               hyperLink="https://so.mingluji.com"
             />
           </a>
@@ -39,7 +38,7 @@ function Home() {
               title="IPSHU-路由器"
               titleTextTune="light"
               tags={["IP查询", "归属地"]}
-              detailLink="businesses/router-brand-list"
+              detailLink="businesses/7"
               hyperLink="https://zh-hans.ipshu.com/router-brand-list"
             />
           </a>
@@ -48,7 +47,7 @@ function Home() {
               backgroundImage={tongcha}
               title="通查-身份验证"
               tags={["企业信息查询", "个人身份验证"]}
-              detailLink={"businesses/identification-name-lookup"}
+              detailLink={"businesses/8"}
               hyperLink={"https://www.tongchaba.com/zmxy"}
             />
           </a>
@@ -56,7 +55,7 @@ function Home() {
             backgroundImage={emojiMaker}
             title="emojiall-emoji maker"
             tags={["emoji maker", "自己制作emoji表情包"]}
-            detailLink="businesses/emoji-maker"
+            detailLink="businesses/5"
             hyperLink="https://www.emojiall.com/zh-hans/emoji-maker-page"
           />
         </div>

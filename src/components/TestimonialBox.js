@@ -1,4 +1,4 @@
-import erica from "../assets/erica.webp";
+import erica from "../assets/logo.png";
 
 function TestimonialBox({ personName, personDetail, avatar, quote }) {
   if (!personName) {

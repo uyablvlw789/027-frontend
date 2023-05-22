@@ -1,13 +1,6 @@
 import { BiLinkExternal } from "react-icons/bi";
 import { Link } from "react-router-dom";
-function LargeCard({
-  backgroundImage,
-  title,
-  tags,
-  titleTextTune,
-  detailLink,
-  hyperLink,
-}) {
+function LargeCard({ backgroundImage, title, tags, titleTextTune, detailLink, hyperLink }) {
   return (
     <div
       className="group w-full aspect-5/3 md:h-72 md:w-120 rounded-md p-4 flex-shrink-0 cursor-pointer bg-opacity-60 relative "
@@ -19,7 +12,7 @@ function LargeCard({
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div class="absolute inset-0 w-full h-full bg-white bg-opacity-20 pointer-events-none group-hover:bg-opacity-10"></div>
+      <div className="absolute inset-0 w-full h-full bg-white bg-opacity-20 pointer-events-none group-hover:bg-opacity-10"></div>
       <div className="flex h-full w-full justify-between">
         <Link
           onClick={() => {
@@ -62,7 +55,7 @@ function LargeCard({
         </Link>
 
         <div className="self-start">
-          <a href={hyperLink} target="_blank">
+          <a href={hyperLink} target="_blank" rel="noreferrer">
             <BiLinkExternal
               className={`${
                 titleTextTune === "light"

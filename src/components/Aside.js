@@ -10,7 +10,7 @@ function Aside() {
   const limit = 4;
   const type = "all";
 
-  const byLatest = "publishedAt:desc";
+  const byLatest = "createdAt:desc";
 
   const query = useQuery({
     queryKey: ["announcements", `${type}`, `${start}`, `${limit}`],
@@ -19,10 +19,10 @@ function Aside() {
         params: {
           "pagination[start]": start,
           "pagination[limit]": limit,
-          "fields[0]": "title",
-          "fields[1]": "publishedAt",
-          "fields[2]": "type",
-          "fields[3]": "coverimage",
+          // "fields[0]": "title",
+          // "fields[1]": "publishedAt",
+          // "fields[2]": "type",
+          // "fields[3]": "coverimage",
           sort: byLatest,
           populate: "*",
         },

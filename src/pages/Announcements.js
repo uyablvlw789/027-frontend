@@ -23,8 +23,7 @@ function Announcements() {
   useEffect(() => {
     setCurrentPage(Number.parseInt(searchParams.get("page") || 1));
     setSelectedOption(
-      options.find((option) => option.value === searchParams.get("type")) ||
-        options[2]
+      options.find((option) => option.value === searchParams.get("type")) || options[2]
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
@@ -32,14 +31,11 @@ function Announcements() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [selectedOption, setSelectedOption] = useState(
-    options.find((option) => option.value === searchParams.get("type")) ||
-      options[2]
+    options.find((option) => option.value === searchParams.get("type")) || options[2]
   );
 
   // States for pagination
-  const [currentPage, setCurrentPage] = useState(
-    Number.parseInt(searchParams.get("page")) || 1
-  );
+  const [currentPage, setCurrentPage] = useState(Number.parseInt(searchParams.get("page")) || 1);
 
   // 每页显示多少篇文章，当前六页
   const [postPerPage, setpostPerPage] = useState(6);
@@ -62,22 +58,13 @@ function Announcements() {
   const limit = postPerPage;
 
   const query = useQuery({
-    queryKey: [
-      "announcements",
-      `${selectedOption.value}`,
-      `${start}`,
-      `${limit}`,
-    ],
+    queryKey: ["announcements", `${selectedOption.value}`, `${start}`, `${limit}`],
     queryFn: () => {
       if (selectedOption.value === "all") {
         return axios.get(queryString, {
           params: {
             "pagination[start]": start,
             "pagination[limit]": limit,
-            "fields[0]": "title",
-            "fields[1]": "publishedAt",
-            "fields[2]": "type",
-            "fields[3]": "coverimage",
             populate: "*",
           },
         });
@@ -86,10 +73,6 @@ function Announcements() {
           params: {
             "pagination[start]": start,
             "pagination[limit]": limit,
-            "fields[0]": "title",
-            "fields[1]": "publishedAt",
-            "fields[2]": "type",
-            "fields[3]": "coverimage",
             populate: "*",
             "filters[type][$eq]": selectedOption.value,
           },
@@ -130,31 +113,29 @@ function Announcements() {
       }
       return announcement.attributes.type === selectedOption.value;
     };
-    const AnnouncemenceList = announcements
-      .filter(filterType)
-      .map((announcement) => {
-        const {
-          title,
-          publishedAt,
-          type,
-          coverimage: {
-            data: {
-              attributes: { url },
-            },
+    const AnnouncemenceList = announcements.filter(filterType).map((announcement) => {
+      const {
+        title,
+        publishedAt,
+        type,
+        coverimage: {
+          data: {
+            attributes: { url },
           },
-        } = announcement.attributes;
-        return (
-          <AnnouncementCard
-            id={announcement.id}
-            key={announcement.id}
-            title={title}
-            category={type}
-            date={publishedAt}
-            coverImg={url}
-            compact={false} // 不是紧凑模式
-          />
-        );
-      });
+        },
+      } = announcement.attributes;
+      return (
+        <AnnouncementCard
+          id={announcement.id}
+          key={announcement.id}
+          title={title}
+          category={type}
+          date={publishedAt}
+          coverImg={url}
+          compact={false} // 不是紧凑模式
+        />
+      );
+    });
     content = AnnouncemenceList;
   }
 
@@ -193,9 +174,7 @@ function Announcements() {
           onChange={handleSelectChange}
           options={options}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-3">
-          {content}
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-3">{content}</div>
         <Pagination
           selectedOption={selectedOption}
           totalPosts={pageCount}

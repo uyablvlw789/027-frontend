@@ -18,10 +18,8 @@ function NavLinks({ classes, isMoble, onClick }) {
           </Link>
         </li>
         <li className="cursor-pointer px-3">
-          <Link to="/about" >
-          公司介绍 
-          </Link>
-          </li>
+          <Link to="/about">公司介绍</Link>
+        </li>
         <li className="cursor-pointer px-3">
           <Link to="/businesses" className="px-3">
             主营业务
@@ -34,9 +32,12 @@ function NavLinks({ classes, isMoble, onClick }) {
           <Link to="/finance">财务通道</Link>
         </li>
 
-        <button className="self-center w-4/5 px-4 py-2 font-semibold rounded-md bg-blue-600 text-white">
+        <Link
+          to="/contact"
+          className="self-center w-4/5 px-4 py-2 font-semibold rounded-md bg-blue-600 text-white"
+        >
           联系我们
-        </button>
+        </Link>
       </ul>,
       document.querySelector(".modal-container")
     );

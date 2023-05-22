@@ -7,7 +7,7 @@ function LatestArticleCards() {
   const type = "all";
   const start = 0;
   const limit = 4;
-  const byLatest = "publishedAt:desc";
+  const byLatest = "updatedAt:desc";
 
   const query = useQuery({
     queryKey: ["announcements", `${type}`, `${start}`, `${limit}`],
@@ -16,10 +16,10 @@ function LatestArticleCards() {
         params: {
           "pagination[start]": start,
           "pagination[limit]": limit,
-          "fields[0]": "title",
-          "fields[1]": "publishedAt",
-          "fields[2]": "type",
-          "fields[3]": "coverimage",
+          // "fields[0]": "title",
+          // "fields[1]": "publishedAt",
+          // "fields[2]": "type",
+          // "fields[3]": "coverimage",
           sort: byLatest,
           populate: "*",
         },

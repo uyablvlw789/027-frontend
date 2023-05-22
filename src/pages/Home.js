@@ -28,7 +28,7 @@ function Home() {
               title="新工商-数据商店"
               titleTextTune="light"
               tags={["企业信息查询", "实时更新"]}
-              detailLink="businesses/6"
+              detailLink="businesses/5"
               hyperLink="https://so.mingluji.com"
             />
           </a>
@@ -38,7 +38,7 @@ function Home() {
               title="IPSHU-路由器"
               titleTextTune="light"
               tags={["IP查询", "归属地"]}
-              detailLink="businesses/7"
+              detailLink="businesses/6"
               hyperLink="https://zh-hans.ipshu.com/router-brand-list"
             />
           </a>
@@ -47,7 +47,7 @@ function Home() {
               backgroundImage={tongcha}
               title="通查-身份验证"
               tags={["企业信息查询", "个人身份验证"]}
-              detailLink={"businesses/8"}
+              detailLink={"businesses/7"}
               hyperLink={"https://www.tongchaba.com/zmxy"}
             />
           </a>
@@ -55,7 +55,7 @@ function Home() {
             backgroundImage={emojiMaker}
             title="emojiall-emoji maker"
             tags={["emoji maker", "自己制作emoji表情包"]}
-            detailLink="businesses/5"
+            detailLink="businesses/2"
             hyperLink="https://www.emojiall.com/zh-hans/emoji-maker-page"
           />
         </div>

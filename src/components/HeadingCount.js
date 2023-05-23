@@ -20,12 +20,13 @@ const HeadingCount = () => {
     let options = {
       root: null,
       rootMargin: "0px",
-      threshold: 1.0,
+      threshold: 0.5,
     };
 
     let observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
       if (entry.isIntersecting) {
+        console.log("[HeadingCount] entry is Intersecting");
         animateValue(numberRef.current, 0, 1500000000, 3000);
         observer.unobserve(numberRef.current);
       }
